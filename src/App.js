@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Search from './components/Search';
 import Results from './components/Results';
+import Popup from './components/Popup'
 import axios from 'axios';
 
 function App() {
-
   const [state, setState] = useState({
     s: '',
     results: [],
@@ -12,7 +12,7 @@ function App() {
   })
 
   const searchApiUrl = "https://api.themoviedb.org/3/search/movie/";
-  // const idApiUrl = "https://api.themoviedb.org/3/movie/";
+  const idApiUrl = "https://api.themoviedb.org/3/movie/";
   const apiKey = "?api_key=b1ad2bc727ca4ffa4a23e8a5b74e3ae0";
 
   const search = (e) => {
@@ -34,6 +34,25 @@ function App() {
     });
   }
 
+  const openPopup = id => {
+    axios(idApiUrl + id + apiKey).then(({ data }) => {
+      let result = data;
+
+      console.log(result);
+
+      setState(prevState => {
+        return { ...prevState, selected: result }
+      });
+    });
+  }
+
+  const closePopup = () => {
+    setState(prevState => {
+      return { ...prevState, selected: {} }
+    });
+  }
+
+
   return (
     <div className="App">
       <header>
@@ -41,7 +60,8 @@ function App() {
       </header>
       <main>
         <Search handleInput={handleInput} search={search} />
-        <Results results={state.results} />
+        <Results results={state.results} openPopup={openPopup} />
+        {(typeof state.selected.title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
       </main>
     </div>
   );
