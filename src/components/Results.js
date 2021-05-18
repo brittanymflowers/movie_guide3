@@ -1,13 +1,12 @@
 import React from 'react';
 import Result from './Result';
 
-function Results(props) {
+function Results({ results }) {
     return (
         <section className="results">
-            {props.results.map(result => (
-                <Result result={result} />
+            {results.map(result => (
+                <Result key={result.id} result={result} />
             ))}
-            
         </section>
     )
 }
