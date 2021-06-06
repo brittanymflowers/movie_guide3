@@ -1,6 +1,6 @@
 import React from 'react';
 
-const baseUrl = 'https://image.tmdb.org/t/p/w500';
+const baseUrl = 'https://image.tmdb.org/t/p/w300';
 
 function Result({ result, openPopup }) {
     if (result.poster_path === null) {

@@ -2,10 +2,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'montserrat', sans-serif;
 }
 
-body {
-	font-family: 'montserrat', sans-serif;
+.App {
 	background-color: #223343;
 }
 
@@ -13,11 +13,12 @@ header {
 	padding: 50px 15px 0px;
 }
 
-header h1 {
-	color: #FFF;
+h1 {
+	color: whitesmoke;
 	font-size: 48px;
 	font-weight: 500;
 	text-align: center;
+	padding: 30px;
 }
 
 main {
@@ -34,18 +35,14 @@ section {
 	display: block;
 	width: 100%;
 	padding: 15px;
-
 	border: none;
 	outline: none;
 	background: none;
-
 	background-color: #EEE;
 	border-radius: 8px;
-
 	color: #53565A;
 	font-size: 20px;
 	font-weight: 300;
-
 	transition: 0.4s ease-out;
 }
 
@@ -74,7 +71,7 @@ section {
 }
 
 .results .result h3 {
-	color: #FFF;
+	color: whitesmoke;
 	font-size: 20px;
 	font-weight: 600;
 	padding: 10px;
@@ -84,7 +81,7 @@ section {
 }
 
 .results .result:hover h3 {
-	background: #FFF;
+	background: whitesmoke;
 	color: #223343;
 }
 
@@ -105,8 +102,7 @@ section {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 25px;
-
-	color: #FFF;
+	color: whitesmoke;
 }
 
 .popup .content h2 {
@@ -146,7 +142,7 @@ section {
 	font-weight: 700;
 
 	background: #4484C4;
-	color: #FFF;
+	color: whitesmoke;
 	border-radius: 8px;
 	border: none;
 	outline: none;
@@ -158,4 +154,55 @@ section {
 
 .popup .content .close:hover {
 	background: #223343;
+}
+
+.jumbotron {
+    margin: 0px;
+    padding: 15px;
+    background-image: linear-gradient(to right, #000, #4484C4,  whitesmoke);
+}
+
+#jumboTitle {
+    color: whitesmoke;
+	text-align: left;
+	font-size: 5vw;
+}
+
+.navbar {
+  background: #4484C4;
+  align-content: stretch;
+  width: 100vw;
+  margin: 0px;
+  position: sticky;
+}
+
+.nav {
+	align-content: stretch;
+	margin: 0px;
+}
+
+.nav-link {
+	color: whitesmoke;
+}
+
+.site-footer {
+  background: #4484C4;
+  align-content: stretch;
+  width: 100vw;
+  margin: 0px;
+  margin-bottom: 0;
+  position: absolute;
+}
+
+.footer-link {
+	color: whitesmoke;
+}
+
+.attribution {
+	color: whitesmoke;
+	font-weight: lighter;
+}
+
+hr {
+	border: 1px solid whitesmoke;
 }
